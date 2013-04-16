@@ -3,7 +3,11 @@
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type="text/javascript">
       $(function() {
-        $('#daButton').bind('click', function() { alert('yay!') });
+          $('#daButton').bind('click', function() {
+            $.getJSON('http://www.betterplace.org/de/api_v4/projects', function(data) {
+              alert('wir haben ' + data.total_entries + ' projekte');
+            });
+          });
       });
     </script>
   </head>
